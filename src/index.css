@@ -1,0 +1,240 @@
+/* =====================
+   GLOBAL STYLES
+===================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  background: #0f172a;
+  color: #e5e7eb;
+  overflow-x: hidden;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* =====================
+   SECTIONS
+===================== */
+.section {
+  padding: 5rem 8vw;
+}
+
+.section h2 {
+  font-size: 2.2rem;
+  margin-bottom: 1.5rem;
+}
+
+/* =====================
+   HERO
+===================== */
+.hero h1 {
+  font-size: 3rem;
+  font-weight: 700;
+}
+
+.hero p {
+  color: #94a3b8;
+  margin-top: 0.5rem;
+}
+
+/* =====================
+   ABOUT
+===================== */
+.about-list {
+  list-style: none;
+  margin-top: 1rem;
+}
+
+.about-list li {
+  margin-bottom: 0.5rem;
+  color: #cbd5f5;
+}
+
+/* =====================
+   SKILLS
+===================== */
+.skill-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+}
+
+.skill-chip {
+  padding: 0.5rem 1rem;
+  background: #020617;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  color: #38bdf8;
+}
+
+/* =====================
+   PROJECTS & HIGHLIGHTS
+===================== */
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.5rem;
+}
+
+.project-card {
+  background: #020617;
+  padding: 1.4rem;
+  border-radius: 14px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+}
+
+.project-card h3 {
+  margin-bottom: 0.5rem;
+}
+
+.project-card p {
+  font-size: 0.95rem;
+  color: #cbd5f5;
+}
+
+.project-card span {
+  display: block;
+  margin-top: 0.7rem;
+  color: #38bdf8;
+  font-size: 0.85rem;
+}
+
+/* =====================
+   EXPERIENCE (TIMELINE)
+===================== */
+.timeline {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+.timeline-item {
+  background: #020617;
+  padding: 1.2rem;
+  border-left: 4px solid #38bdf8;
+  border-radius: 8px;
+}
+
+.timeline-item h3 {
+  margin-bottom: 0.3rem;
+}
+
+.timeline-item span {
+  font-size: 0.85rem;
+  color: #94a3b8;
+}
+
+/* =====================
+   COUNTERS
+===================== */
+.counters {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  text-align: center;
+  gap: 2rem;
+}
+
+.counters h3 {
+  font-size: 2.2rem;
+  color: #38bdf8;
+}
+
+.counters p {
+  color: #94a3b8;
+}
+
+/* =====================
+   CONTACT
+===================== */
+.contact-form {
+  max-width: 420px;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+.contact-form input,
+.contact-form textarea {
+  padding: 0.8rem;
+  border-radius: 8px;
+  border: none;
+  background: #020617;
+  color: white;
+}
+
+.contact-form textarea {
+  resize: none;
+  height: 90px;
+}
+
+.contact-form button {
+  padding: 0.8rem;
+  border: none;
+  border-radius: 8px;
+  background: #38bdf8;
+  color: #020617;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.contact-form button:hover {
+  background: #0ea5e9;
+}
+
+/* =====================
+   NAVBAR (SIMPLE)
+===================== */
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  padding: 1rem 8vw;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: rgba(15, 23, 42, 0.85);
+  backdrop-filter: blur(8px);
+  z-index: 100;
+}
+
+.navbar ul {
+  display: flex;
+  list-style: none;
+  gap: 1.5rem;
+}
+
+.github{
+  width: 24px;
+  height: 24px;
+  fill: #e5e7eb;
+}
+
+/* =====================
+   RESPONSIVE
+===================== */
+@media (max-width: 768px) {
+  .section {
+    padding: 4rem 6vw;
+  }
+
+  .hero h1 {
+    font-size: 2.2rem;
+  }
+
+  .navbar ul {
+    display: none;
+  }
+}
