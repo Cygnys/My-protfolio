@@ -26,7 +26,7 @@ export default function Hero() {
           color: "white",
         }}
       >
-        <h1>Hi, I&apos;m Cygnys 👋</h1>
+        <h1>Hi, I&apos;m Kartik 👋</h1>
         <TypingText />
       </motion.div>
 

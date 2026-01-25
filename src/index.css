@@ -59,14 +59,34 @@ a {
 /* LEFT GROUP */
 .navbar-left {
   display: flex;
-  align-items: center;
+  align-items: right;
   gap: 0.75rem;
 }
 
-.logo {
+/* .logo {
   font-size: 1.3rem;
   font-weight: 700;
   color: #ffffff;
+} */
+
+/* LOGO */
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #ffffff;
+}
+
+.logo-icon {
+  display: flex;
+  font-size: 1.5rem;
+  color: #38bdf8;
+}
+
+.logo-text {
+  line-height: 1;
 }
 
 /* DESKTOP LINKS */
@@ -104,7 +124,7 @@ a {
 .dropdown-menu {
   position: absolute;
   top: 56px;
-  left: 1rem;
+  right: 1rem;
   width: 210px;
   background: #020617;
   border-radius: 12px;
@@ -203,11 +223,62 @@ a {
   gap: 1.5rem;
 }
 
+/* =====================
+   PROJECT CARD LINKS
+===================== */
+
 .project-card {
   background: #020617;
   padding: 1.4rem;
   border-radius: 14px;
+  position: relative;
+  padding-bottom: 3.2rem; /* space for icons */
 }
+
+.project-links {
+  position: absolute;
+  bottom: 1rem;
+  left: 1.2rem;
+  right: 1.2rem;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.project-links a {
+  font-size: 1.4rem;
+  color: #94a3b8;
+  transition: color 0.25s ease;
+}
+
+.project-links a:hover {
+  color: #38bdf8;
+}
+
+/* Tooltip (same feel as socials) */
+.project-links a::after {
+  content: attr(aria-label);
+  position: absolute;
+  bottom: 130%;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #020617;
+  color: #e5e7eb;
+  padding: 4px 8px;
+  font-size: 0.7rem;
+  border-radius: 6px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s ease;
+  white-space: nowrap;
+}
+
+.project-links a:hover::after {
+  opacity: 1;
+}
+
+
 
 .project-card span {
   color: #38bdf8;
@@ -270,12 +341,75 @@ a {
   border: none;
 }
 
+/* =====================
+   BUTTON ANIMATION
+===================== */
+
 .contact-form button {
-  padding: 0.85rem;
-  border-radius: 10px;
+  outline: none;
+  cursor: pointer;
+  border: none;
+
+  padding: 0.9rem 2rem;
+  margin: 0;
+
+  font-family: inherit;
+  font-size: 17px;
+  font-weight: 700;
+  letter-spacing: 0.05rem;
+
+  position: relative;
+  display: inline-block;
+  overflow: hidden;
+
+  border-radius: 500px;
+
+  background: #66ff66;
+  color: white;
+
+  transition: color 0.4s ease;
+}
+
+/* Text wrapper (required for animation) */
+.contact-form button span {
+  position: relative;
+  z-index: 10;
+  transition: color 0.4s ease;
+}
+
+/* Hover text color */
+.contact-form button:hover span {
+  color: white;
+}
+
+/* Pseudo elements for slide animation */
+.contact-form button::before,
+.contact-form button::after {
+  content: "";
+  color: white;
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+/* Sliding black layer */
+.contact-form button::before {
   background: #38bdf8;
-  color: #020617;
-  font-weight: 600;
+  color: white;
+  width: 120%;
+  left: -10%;
+  transform: skew(30deg);
+  transition: transform 0.4s cubic-bezier(0.3, 1, 0.8, 1);
+}
+
+/* Hover animation */
+.contact-form button:hover::before {
+  transform: translate3d(100%, 0, 0);
+}
+
+/* Optional hover background fallback */
+.contact-form button:hover {
+  color: white;
 }
 
 /* =====================

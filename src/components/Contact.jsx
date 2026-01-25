@@ -33,7 +33,7 @@ export default function Contact() {
             <input type="text" placeholder="Name" required />
             <input type="email" placeholder="Email" required />
             <textarea placeholder="Message"></textarea>
-            <button type="submit">Send</button>
+            <button type="submit"><span>Send</span></button>
           </motion.form>
 
         </div>
