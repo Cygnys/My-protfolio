@@ -33,7 +33,7 @@ export default function Socials() {
     },
     {
       icon: <FaFilePdf />,
-      link: "/Kartik_Patil_Resume.pdf",
+      link: "./public/Kartik Patil Resume2.pdf",
       label: "Resume",
     },
   ];
