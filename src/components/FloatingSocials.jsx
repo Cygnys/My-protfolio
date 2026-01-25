@@ -17,7 +17,7 @@ export default function FloatingSocials() {
         <FaLinkedin />
       </motion.a>
 
-      <motion.a whileHover={{ x: 6 }} href="mailto:patilkartik890@gmail.com">
+      <motion.a whileHover={{ x: 6 }} href="mailto:patilkartik890@gmail.com" target="_blank">
         <FaEnvelope />
       </motion.a>
     </motion.div>

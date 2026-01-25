@@ -10,9 +10,10 @@ export default function Hero() {
         height: "100vh",
         position: "relative",
         overflow: "hidden",
+        backgroundColor: "black",
       }}
     >
-      {/* Text above Spline */}
+      {/* TEXT */}
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
@@ -24,22 +25,21 @@ export default function Hero() {
           left: "5%",
           color: "white",
         }}
-        className="hero-text"
       >
         <h1>Hi, I&apos;m Cygnys 👋</h1>
         <TypingText />
       </motion.div>
 
-      {/* Spline Canvas (NO animation) */}
-      <Spline
-        scene="https://prod.spline.design/TjuDfVnYnwF0jTI8/scene.splinecode"
-        style={{
-          position: "absolute",
-          inset: 0,
-          width: "100%",
-          height: "100%",
-        }}
-      />
+      {/* SPLINE WRAPPER (RIGHT SIDE) */}
+      <div className="hero-spline">
+        <Spline
+          scene="https://prod.spline.design/TjuDfVnYnwF0jTI8/scene.splinecode"
+          style={{
+            width: "100%",
+            height: "100%",
+          }}
+        />
+      </div>
     </section>
   );
 }

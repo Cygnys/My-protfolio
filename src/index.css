@@ -44,6 +44,40 @@ a {
   margin-top: 0.5rem;
 }
 
+.hero-spline {
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 55vw;
+  height: 100vh;
+}
+
+
+@media (max-width: 768px) {
+  .hero-spline {
+    position: absolute;
+    inset: 0;
+    width: 100vw;
+    height: 100vh;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    transform: scale(0.85); /* 👈 show full object */
+    transform-origin: center;
+  }
+
+  .hero-text {
+    top: 15%;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    width: 90%;
+  }
+}
+
+
 /* =====================
    ABOUT
 ===================== */
