@@ -32,8 +32,125 @@ a {
 }
 
 /* =====================
+   NAVBAR
+===================== */
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  padding: 1rem 8vw;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: rgba(15, 23, 42, 0.85);
+  backdrop-filter: blur(8px);
+  z-index: 100;
+}
+
+.logo {
+  font-size: 1.4rem;
+  font-weight: 700;
+}
+
+.navbar ul {
+  display: flex;
+  list-style: none;
+  gap: 1.5rem;
+}
+
+/* =====================
+   DROPDOWN MOBILE MENU
+===================== */
+.dropdown-menu {
+  position: absolute;
+  top: 70px; /* just below navbar */
+  right: 1.2rem;
+  background: #020617;
+  border-radius: 12px;
+  padding: 0.8rem 0;
+  width: 200px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  z-index: 150;
+}
+
+.dropdown-menu a {
+  display: block;
+  padding: 0.75rem 1.2rem;
+  font-size: 0.95rem;
+  color: #e5e7eb;
+}
+
+.dropdown-menu a:hover {
+  background: rgba(56, 189, 248, 0.1);
+  color: #38bdf8;
+}
+
+/* Mobile only */
+@media (min-width: 769px) {
+  .dropdown-menu {
+    display: none;
+  }
+}
+
+
+/* =====================
+   HAMBURGER
+===================== */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+}
+
+.hamburger span {
+  width: 24px;
+  height: 2px;
+  background: #e5e7eb;
+}
+
+/* =====================
+   MOBILE MENU
+===================== */
+.mobile-menu {
+  position: fixed;
+  inset: 0;
+  background: #020617;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  z-index: 200;
+}
+
+.mobile-menu a {
+  font-size: 1.4rem;
+  color: #e5e7eb;
+}
+
+.close-btn {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  font-size: 1.6rem;
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+}
+
+/* =====================
    HERO
 ===================== */
+.hero {
+  width: 100vw;
+  height: 100vh;
+  position: relative;
+  background: #000;
+  overflow: hidden;
+}
+
 .hero h1 {
   font-size: 3rem;
   font-weight: 700;
@@ -44,6 +161,15 @@ a {
   margin-top: 0.5rem;
 }
 
+.hero-text {
+  position: absolute;
+  z-index: 10;
+  top: 40%;
+  left: 5%;
+  color: white;
+}
+
+/* SPLINE */
 .hero-spline {
   position: absolute;
   right: 0;
@@ -52,28 +178,21 @@ a {
   height: 100vh;
 }
 
+.hero-spline canvas {
+  width: 100% !important;
+  height: 100% !important;
+}
 
-@media (max-width: 768px) {
-  .hero-spline {
-    position: absolute;
-    inset: 0;
-    width: 100vw;
-    height: 100vh;
-
+@media (max-width: 420px) {
+  .hero {
+    background: #000;
     display: flex;
-    align-items: center;
     justify-content: center;
-
-    transform: scale(0.85); /* 👈 show full object */
-    transform-origin: center;
   }
 
-  .hero-text {
-    top: 15%;
-    left: 50%;
-    transform: translateX(-50%);
-    text-align: center;
-    width: 90%;
+  .hero-spline {
+    max-width: 360px;   /* 👈 real phone width */
+    margin: 0 auto;
   }
 }
 
@@ -109,7 +228,7 @@ a {
 }
 
 /* =====================
-   PROJECTS & HIGHLIGHTS
+   PROJECTS
 ===================== */
 .project-grid {
   display: grid;
@@ -129,10 +248,6 @@ a {
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
 }
 
-.project-card h3 {
-  margin-bottom: 0.5rem;
-}
-
 .project-card p {
   font-size: 0.95rem;
   color: #cbd5f5;
@@ -146,7 +261,7 @@ a {
 }
 
 /* =====================
-   EXPERIENCE (TIMELINE)
+   EXPERIENCE
 ===================== */
 .timeline {
   display: flex;
@@ -159,10 +274,6 @@ a {
   padding: 1.2rem;
   border-left: 4px solid #38bdf8;
   border-radius: 8px;
-}
-
-.timeline-item h3 {
-  margin-bottom: 0.3rem;
 }
 
 .timeline-item span {
@@ -185,14 +296,9 @@ a {
   color: #38bdf8;
 }
 
-.counters p {
-  color: #94a3b8;
-}
-
 /* =====================
    CONTACT
 ===================== */
-
 .contact-section {
   min-height: 80vh;
   display: flex;
@@ -204,12 +310,10 @@ a {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 4rem;
-  align-items: center;
 }
 
 .contact-form {
   max-width: 420px;
-  margin: auto;
   display: flex;
   flex-direction: column;
   gap: 0.9rem;
@@ -217,93 +321,24 @@ a {
 
 .contact-form input,
 .contact-form textarea {
-  width: 350px;
   padding: 0.85rem;
   border-radius: 10px;
-  border: 1px solid transparent; /* prevents layout jump */
+  border: none;
   background: #020617;
-  color: #ffffff;
-  transition: 
-    border 0.25s ease,
-    box-shadow 0.25s ease,
-    background 0.25s ease;
-}
-
-/* Focus animation */
-.contact-form input:focus,
-.contact-form textarea:focus {
-  outline: none;
-  border-color: #38bdf8;
-  box-shadow: 0 0 0 3px rgba(56, 189, 248, 0.18);
-  background: #020617;
-}
-
-.contact-form textarea {
-  resize: none;
-  height: 100px;
+  color: white;
 }
 
 .contact-form button {
-  margin-top: 0.6rem;
   padding: 0.85rem;
-  border: none;
   border-radius: 10px;
   background: #38bdf8;
-  color: #020617; /* better contrast */
+  color: #020617;
   font-weight: 600;
   cursor: pointer;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
-
-.contact-form button:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 12px 28px rgba(56, 189, 248, 0.28);
-}
-
-.contact-form button:active {
-  transform: translateY(0);
-  box-shadow: 0 6px 14px rgba(56, 189, 248, 0.2);
-}
-
-/* Mobile */
-@media (max-width: 768px) {
-  .contact-grid {
-    grid-template-columns: 1fr;
-    gap: 2.5rem;
-  }
-}
-
-
-/* =====================
-   NAVBAR (SIMPLE)
-===================== */
-.navbar {
-  position: fixed;
-  top: 0;
-  width: 100%;
-  padding: 1rem 8vw;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background: rgba(15, 23, 42, 0.85);
-  backdrop-filter: blur(8px);
-  z-index: 100;
-}
-
-.navbar ul {
-  display: flex;
-  list-style: none;
-  gap: 1.5rem;
 }
 
 /* =====================
-  SOCIALS
-===================== */
-/* =====================
-   SOCIAL ICONS
-===================== */
-/* =====================
-   SOCIAL ICONS
+   SOCIALS
 ===================== */
 .socials {
   display: flex;
@@ -312,39 +347,13 @@ a {
 }
 
 .socials a {
-  position: relative;
   font-size: 1.6rem;
   color: #94a3b8;
-  transition: color 0.3s ease, transform 0.3s ease;
 }
 
 .socials a:hover {
   color: #38bdf8;
-  transform: translateY(-3px);
 }
-
-/* Tooltip */
-.socials a::after {
-  content: attr(data-tooltip);
-  position: absolute;
-  bottom: -35px;
-  left: 50%;
-  transform: translateX(-50%);
-  background: #020617;
-  color: #e5e7eb;
-  padding: 4px 8px;
-  font-size: 0.75rem;
-  border-radius: 6px;
-  opacity: 0;
-  pointer-events: none;
-  transition: opacity 0.2s ease;
-  white-space: nowrap;
-}
-
-.socials a:hover::after {
-  opacity: 1;
-}
-
 
 /* =====================
    FLOATING SOCIAL BAR
@@ -360,39 +369,56 @@ a {
   z-index: 200;
 }
 
-.floating-socials a {
-  font-size: 1.4rem;
-  color: #94a3b8;
-  transition: color 0.3s ease, transform 0.3s ease;
-}
-
-.floating-socials a:hover {
-  color: #38bdf8;
-  transform: translateX(5px);
-}
-
-/* Hide on mobile */
-@media (max-width: 768px) {
-  .floating-socials {
-    display: none;
-  }
-}
-
-
-
 /* =====================
-   RESPONSIVE
+   MOBILE (REAL PHONES 360–390px)
 ===================== */
-@media (max-width: 768px) {
+@media (max-width: 420px) {
+
   .section {
-    padding: 4rem 6vw;
+    padding: 3.5rem 1.2rem;
   }
 
-  .hero h1 {
-    font-size: 2.2rem;
+  .navbar {
+    padding: 0.8rem 1.2rem;
   }
 
   .navbar ul {
+    display: none;
+  }
+
+  .hamburger {
+    display: flex;
+  }
+
+  .hero-text {
+    top: 12%;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    width: 90%;
+  }
+
+  .hero-text h1 {
+    font-size: 2rem;
+  }
+
+  .hero-spline {
+    inset: 0;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transform: scale(0.78);
+  }
+
+  .project-grid,
+  .contact-grid,
+  .counters {
+    grid-template-columns: 1fr;
+  }
+
+  .floating-socials {
     display: none;
   }
 }
