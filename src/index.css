@@ -340,6 +340,7 @@ a {
 
 @media (max-width: 768px) {
   .floating-socials {
+    display: none;
   }
 }
 

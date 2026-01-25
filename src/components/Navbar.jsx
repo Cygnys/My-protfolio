@@ -17,7 +17,7 @@ export default function Navbar() {
           <span />
         </div>
 
-        <div className="logo">Cygnys</div>
+        <div className="logo"><a href="#Home">Cygnys</a></div>
       </div>
 
       {/* DESKTOP LINKS */}

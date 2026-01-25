@@ -4,7 +4,7 @@ import TypingText from "./Typing";
 
 export default function Hero() {
   return (
-    <section
+    <section id="Home"
       style={{
         width: "100vw",
         height: "100vh",
