@@ -6,9 +6,21 @@ export default function Navbar() {
 
   return (
     <nav className="navbar">
-      <div className="logo">Cygnys</div>
+      {/* LEFT: Hamburger + Logo */}
+      <div className="navbar-left">
+        <div
+          className="hamburger"
+          onClick={() => setOpen(!open)}
+        >
+          <span />
+          <span />
+          <span />
+        </div>
 
-      {/* Desktop Links */}
+        <div className="logo">Cygnys</div>
+      </div>
+
+      {/* DESKTOP LINKS */}
       <ul className="nav-links">
         <li><a href="#about">About</a></li>
         <li><a href="#skills">Skills & Experience</a></li>
@@ -16,14 +28,7 @@ export default function Navbar() {
         <li><a href="#contact">Contact</a></li>
       </ul>
 
-      {/* Hamburger (mobile) */}
-      <div className="hamburger" onClick={() => setOpen(!open)}>
-        <span />
-        <span />
-        <span />
-      </div>
-
-      {/* Dropdown Menu */}
+      {/* MOBILE DROPDOWN */}
       <AnimatePresence>
         {open && (
           <motion.div
