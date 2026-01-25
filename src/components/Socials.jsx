@@ -20,11 +20,13 @@ export default function Socials() {
       icon: <FaGithub />,
       link: "https://github.com/Cygnys",
       label: "GitHub",
+
     },
     {
       icon: <FaLinkedin />,
       link: "https://www.linkedin.com/in/kartik-p-428534203",
       label: "LinkedIn",
+
     },
     {
       icon: <FaEnvelope />,
@@ -33,7 +35,7 @@ export default function Socials() {
     },
     {
       icon: <FaFilePdf />,
-      link: "./public/Kartik Patil Resume2.pdf",
+      link: "./public/KartikPatilResume2.pdf",
       label: "Resume",
     },
   ];

@@ -232,7 +232,8 @@ a {
   padding: 1.4rem;
   border-radius: 14px;
   position: relative;
-  padding-bottom: 3.2rem; /* space for icons */
+  padding-bottom: 3.2rem;
+  /* space for icons */
 }
 
 .project-links {
@@ -326,19 +327,25 @@ a {
 }
 
 .contact-form {
-  max-width: 420px;
   display: flex;
   flex-direction: column;
   gap: 0.9rem;
+  align-items: center;
 }
 
 .contact-form input,
 .contact-form textarea {
+  width: 350px;
   padding: 0.85rem;
   border-radius: 10px;
   background: #020617;
   color: white;
   border: none;
+}
+
+.contact-form textarea {
+  height: 120px;
+  resize: vertical;
 }
 
 /* =====================
@@ -349,6 +356,9 @@ a {
   outline: none;
   cursor: pointer;
   border: none;
+  align-items: center;
+
+  width: fit-content;
 
   padding: 0.9rem 2rem;
   margin: 0;
@@ -367,14 +377,14 @@ a {
   background: #66ff66;
   color: white;
 
-  transition: color 0.4s ease;
+  transition: color 1s ease;
 }
 
 /* Text wrapper (required for animation) */
 .contact-form button span {
   position: relative;
   z-index: 10;
-  transition: color 0.4s ease;
+  transition: color 1s ease;
 }
 
 /* Hover text color */
@@ -399,7 +409,7 @@ a {
   width: 120%;
   left: -10%;
   transform: skew(30deg);
-  transition: transform 0.4s cubic-bezier(0.3, 1, 0.8, 1);
+  transition: transform 0.5s cubic-bezier(0.3, 1, 0.8, 1);
 }
 
 /* Hover animation */
@@ -419,6 +429,10 @@ a {
   display: flex;
   gap: 1.2rem;
   margin-top: 1.2rem;
+  position: relative;
+  font-size: 1.6rem;
+  color: #94a3b8;
+  transition: color 0.3s ease;
 }
 
 .socials a {
@@ -430,6 +444,23 @@ a {
   color: #38bdf8;
 }
 
+
+.socials a::after {
+  content: attr(data-tooltip);
+  position: absolute;
+  bottom: -36px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #020617;
+  color: #e5e7eb;
+  padding: 4px 10px;
+  font-size: 0.75rem;
+  border-radius: 6px;
+  opacity: 0;
+  pointer-events: none;
+  white-space: nowrap;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
 /* =====================
    MOBILE FIX (CRITICAL)
 ===================== */
@@ -455,11 +486,12 @@ a {
   gap: 1rem;
 
   padding: 0.6rem;
-  
+
   backdrop-filter: blur(8px);
   border-radius: 12px;
 
-  z-index: 999; /* 👈 always on top */
+  z-index: 999;
+  /* 👈 always on top */
 }
 
 .floating-socials a {
