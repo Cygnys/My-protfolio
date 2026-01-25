@@ -1,6 +1,10 @@
+import AnimateSection from "./AnimationSection";
+import { fadeLeft } from "../animations/sectionVariants";
+
 export default function Experience() {
   return (
-    <section className="section">
+    <AnimateSection variant={fadeLeft}>
+      <section className="section">
       <h2>Experience</h2>
 
       <div className="timeline">
@@ -17,5 +21,6 @@ export default function Experience() {
         </div>
       </div>
     </section>
+    </AnimateSection>
   );
 }

@@ -1,5 +1,10 @@
+import AnimateSection from "./AnimationSection";
+import { fadeRight } from "../animations/sectionVariants";
+
 export default function Projects() {
   return (
+
+    <AnimateSection variant={fadeRight}>
     <section id="projects" className="section">
       <h2>Projects</h2>
 
@@ -61,5 +66,6 @@ export default function Projects() {
 
       </div>
     </section>
+    </AnimateSection>
   );
 }

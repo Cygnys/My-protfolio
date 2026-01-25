@@ -1,5 +1,9 @@
+import AnimationSection from "./AnimationSection";
+import { fadeUp } from "../animations/sectionVariants";
+
 export default function About() {
   return (
+    <AnimationSection variants={fadeUp}>
     <section id="about" className="section">
       <h2>About Me</h2>
       <p>
@@ -14,5 +18,6 @@ export default function About() {
         <li><b>Interests:</b> System Design, Optimization</li>
       </ul>
     </section>
+    </AnimationSection>
   );
 }

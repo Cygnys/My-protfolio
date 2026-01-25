@@ -1,6 +1,9 @@
+import AnimationSection from "./AnimationSection";
+import { fadeScale } from "../animations/sectionVariants";
 export default function Highlights() {
   return (
-    <section className="section">
+    <AnimationSection variant={fadeScale}>
+      <section className="section">
       <h2>Highlights</h2>
 
       <div className="project-grid">
@@ -20,5 +23,6 @@ export default function Highlights() {
         </div>
       </div>
     </section>
+    </AnimationSection>
   );
 }

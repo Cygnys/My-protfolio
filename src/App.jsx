@@ -7,6 +7,7 @@ import Skills from "./components/Skills"
 import Experience from "./components/Experience"
 import Highlights from "./components/Highlights"
 import Counters from "./components/Counter"
+import FloatingSocials from "./components/FloatingSocials"
 
 export default function App() {
   return (
@@ -20,6 +21,7 @@ export default function App() {
       <Highlights />
       <Counters />
       <Contact />
+      <FloatingSocials />
 
     </>
   )

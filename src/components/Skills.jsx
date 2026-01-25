@@ -1,3 +1,6 @@
+import AnimateSection from "./AnimationSection";
+import { fadeScale } from "../animations/sectionVariants";
+
 export default function Skills() {
   const skills = [
     "Python", "JavaScript", "React",
@@ -6,7 +9,9 @@ export default function Skills() {
   ];
 
   return (
-    <section className="section">
+    
+    <AnimateSection variant={fadeScale}>
+    <section className="section" id="skills">
       <h2>Skills</h2>
       <div className="skill-grid">
         {skills.map((skill, i) => (
@@ -14,5 +19,6 @@ export default function Skills() {
         ))}
       </div>
     </section>
+    </AnimateSection>
   );
 }
