@@ -17,7 +17,7 @@ export default function Contact() {
           >
             <h2>Contact</h2>
             <p className="contact-sub">
-              Let’s build something meaningful together.
+              Let's build something meaningful together.
             </p>
             <Socials />
           </motion.div>
@@ -30,9 +30,24 @@ export default function Contact() {
             transition={{ duration: 0.5, delay: 0.1, ease: "easeOut" }}
             viewport={{ once: false, amount: 0.3 }}
           >
-            <input type="text" placeholder="Name" required />
-            <input type="email" placeholder="Email" required />
-            <textarea placeholder="Message"></textarea>
+            {/* Name Input */}
+            <div className="input-group">
+              <input type="text" required className="input" />
+              <label className="user-label">Name</label>
+            </div>
+
+            {/* Email Input */}
+            <div className="input-group">
+              <input type="email" required className="input" />
+              <label className="user-label">Email</label>
+            </div>
+
+            {/* Message Textarea */}
+            <div className="input-group">
+              <textarea required className="input"></textarea>
+              <label className="user-label">Message</label>
+            </div>
+
             <button type="submit"><span>Send</span></button>
           </motion.form>
 
