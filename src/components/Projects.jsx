@@ -90,7 +90,7 @@ export default function Projects() {
 
             <ProjectLinks
               github="https://github.com/Cygnys"
-              live="https://cygnys.github.io/My-protfolio/"
+              live="https://cygnys.github.io/pet-adoption/"
             />
           </div>
 
