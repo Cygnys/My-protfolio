@@ -10,14 +10,33 @@
 
 html {
   scroll-behavior: smooth;
+  overflow-x: hidden;
 }
+
+body {
+  scrollbar-width: none; /* Firefox */
+
+  margin: 0;
+  width: 100%;
+  min-height: 100%;
+  overflow-x: hidden;
+  overflow-y: hidden;
+  color: #e5e7eb;
+
+  background: radial-gradient(
+    circle at top,
+    #0b1020 0%,
+    #050814 40%,
+    #020617 100%
+  );
+}
+
 
 /* =====================
    FULL PAGE STAR DUST
 ===================== */
 .star-dust-layer {
   position: fixed;
-  top: -300px;
   left: 0;
   width: 100%;
   height: 200vh;
@@ -44,7 +63,7 @@ html {
 body {
   color: #e5e7eb;
   overflow-x: hidden;
-  overscroll-behavior-y: none;
+  overflow-y: auto;
 
   position: relative;
   z-index: 2;
@@ -87,6 +106,11 @@ a {
   scroll-margin-top: 70px;
 }
 
+.section:first-of-type {
+  padding-top: calc(5rem + 64px);
+}
+
+
 .section h2 {
   font-size: 2.2rem;
   margin-bottom: 1.5rem;
@@ -96,11 +120,13 @@ a {
    NAVBAR
 ===================== */
 .navbar {
-  position: sticky;
+  position: fixed;
   top: 0;
-  width: 100vw;
+  left: 0;
+  width: 100%;
+  
   height: 56px;
-  padding: 0 3rem;
+  padding: 0.8rem 1rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -113,6 +139,7 @@ a {
   backdrop-filter: blur(8px); */
   z-index: 100;
   overflow: hidden;
+  box-sizing: border-box;
 }
 
 .navbar-left {
@@ -221,7 +248,7 @@ a {
 ===================== */
 .hero {
   width: 100vw;
-  height: 100vh;
+  min-height: 100vh;
   position: relative;
   background: #000000;
   overflow: hidden;
@@ -247,11 +274,13 @@ a {
   width: 55vw;
   height: 100vh;
   background: #000000;
+  overflow: hidden;
 }
 
 .hero-spline canvas {
   width: 100% !important;
   height: 100% !important;
+  display: block;
 }
 
 /* =====================
@@ -692,7 +721,7 @@ a {
   }
 
   .hero-spline canvas {
-    transform: scale(0.9);
+    transform: scale(0.85);
   }
 
   .project-grid {
@@ -734,6 +763,7 @@ a {
 
 /* Mobile - Portrait (320px - 480px) */
 @media (max-width: 480px) {
+
   .section {
     padding: 3rem 1.2rem;
   }
@@ -760,6 +790,13 @@ a {
   .logo-icon {
     font-size: 1.2rem;
   }
+
+  .hero {
+    width: 100vw;
+    min-height: 100vh;
+    overflow: hidden;
+  }
+
 
   .hero-text {
     top: 12%;
