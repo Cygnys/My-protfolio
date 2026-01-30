@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import {
   motion,
   AnimatePresence,
@@ -56,7 +56,7 @@ const letterVariants = {
 ======================= */
 const blackHoleVariants = {
   idle: {
-    scale: [0.9, 1.25, 0.9],
+    scale: [1],
     rotate: [0, 360], // 👈 real spin
     transition: {
       scale: {
@@ -112,6 +112,10 @@ export default function Navbar() {
 
   const letterControls = useAnimationControls();
   const blackHoleControls = useAnimationControls();
+
+  useEffect(() => {
+    blackHoleControls.start("idle");
+  }, []);
 
   return (
     <nav className="navbar">
